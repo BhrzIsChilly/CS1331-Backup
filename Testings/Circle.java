@@ -2,6 +2,14 @@ public class Circle {
     private int radius;
     public static final double PIE = 3.141592;
 
+    // public Circle() { // provide a no-args constructor
+    //     // chain to Circle(int)
+    // }
+    
+    // public Circle(int radius) {
+    //     setRadius(radius);
+    // }
+
     public void setRadius(int r) {
         // validate input (radius should be non-negative, non-zero)
         if (r < 0) {
