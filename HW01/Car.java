@@ -34,22 +34,23 @@ public class Car {
 
 
     private void setModel(String model) {
-        this.model = (model == null || model.isBlank()) ? DEF_MODEL : model;        
+        this.model = (model == null || model.isBlank()) ? DEF_MODEL : model;
     }
 
 
     private void setColor(String color) {
-        this.color = (color == null || color.isBlank()) ? DEF_COLOR : color.toLowerCase();        
+        this.color = (color == null || color.isBlank()) ? DEF_COLOR : color.toLowerCase();
     }
 
 
     private void setConditionCategory(int condition) {
         // ensures value stays between 40 and 100. Otherwise set to 80 as default.
-        if (condition >= 40 && condition <= 100)
+        if (condition >= 40 && condition <= 100) {
             this.conditionCategory = condition;
-        else
-            this.conditionCategory = 80;
-        
+        } else {
+            this.conditionCategory = DEF_CONDITION_CATEGORY;
+        }
+
         // prints out condition as it has become initialized.
         if (40 <= this.conditionCategory && this.conditionCategory <= 49) {
             System.out.println("Driver");
@@ -57,7 +58,7 @@ public class Car {
             System.out.println("Good");
         } else if (60 <= this.conditionCategory && this.conditionCategory <= 69) {
             System.out.println("Very Good");
-        } else if (70 <= this.conditionCategory  && this.conditionCategory<= 79) {
+        } else if (70 <= this.conditionCategory  && this.conditionCategory <= 79) {
             System.out.println("Fine");
         } else if (80 <= this.conditionCategory && this.conditionCategory <= 89) {
             System.out.println("Excellent");
@@ -66,12 +67,24 @@ public class Car {
         }
     }
 
-    ////////// END OF SETTERS ////////// 
+    ////////// END OF SETTERS //////////
+
+    ////////// BEGINNING OF METHODS /////////
+
+    public String[] getColorMakeModel() {
+        String[] returnValue = {this.color, this.make, this.model};
+        return returnValue;
+    }
+
+    public int getYear() {
+        return this.year;
+    }
+
+    public int getConditionCategory() {
+        return this.conditionCategory;
+    }
 
     ////////// BEGINNING OF GETTERS //////////
-
-    
-
 
     public Car() {
         this(DEF_YEAR, DEF_MAKE, DEF_MODEL);  // Precedes to call higher constructor.
