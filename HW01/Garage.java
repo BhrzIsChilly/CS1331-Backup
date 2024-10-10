@@ -61,7 +61,7 @@ public class Garage {
                 Car vehicle = this.carCatalogue[i];
                 if (vehicle.getConditionCategory() > baselineCondition) {
                     String[] carDetails = vehicle.getColorMakeModel();
-                    
+
                     System.out.printf("A %s %d %s %s with a condition category of %d.\n", carDetails[0], vehicle.getYear(), carDetails[1], carDetails[2], vehicle.getConditionCategory());
                 }
             }

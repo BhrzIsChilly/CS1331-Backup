@@ -1,38 +1,16 @@
 public class Test2 {
+    public static String formatLength(Double length) {
+        double unwrappedLength = length.doubleValue();
+        int lengthFeet = (int) unwrappedLength;
+        double lengthInches = (unwrappedLength - lengthFeet) * 12;
+
+        // String formattedLengthToString = String.format("%d ft %.2f in", lengthFeet, lengthInches);
+        return (String.format("%d ft %.2g in", lengthFeet, lengthInches));
+    }
+
     public static void main(String[] args) {
-        String[] TA = {"R", "H", "D", "G", "J", "K", "L", "O", "Q", "A"};
-        int fistBumps = 0;
-        
-        for (int k = 0; k < tempTA.length; k++) {
-            tempTA[i] = TA[i];
-        }
-        for (int i = 0; i < TA.length; i++) {
-            for (int j = 0; j < TA.length; j++) {
-                if (TA[i].equals(TA[j]))
-                    continue;
-                System.out.printf("%s fistbumped %s\n", TA[i], TA[j]);
-                
-                fistBumps++;
-            }
-            String[] tempTA = new String[TA.length - 1];
-            for (int k = 1; k < TA.length; k++) {
-                tempTA[i-1] = TA[i];
-            }
-            
-        }
-        System.out.print(TA.length + " : " + fistBumps);
+        Double doubleValue = 3.999;
+        String strung = formatLength(doubleValue);
+        System.out.println(strung);
     }
 }
-
-/*
-2 > 2   -- 2 * 1
-3 > 6   -- 3 * 2
-4 > 12  -- 4 * 3
-5 > 20  -- 5 * 4
-6 > 30  -- 6 * 5
-7 > 42  -- 7 * 6
-8 > 56  -- 8 * 7
-9 > 72  -- 9 * 8
-10 > 90 -- 10 * 9
-
-*/
