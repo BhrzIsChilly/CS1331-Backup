@@ -7,56 +7,59 @@ public class KeyHandler implements KeyListener {
 
     public boolean upPressed, downPressed, leftPressed, rightPressed;
 
-    @Override
     public void keyTyped(KeyEvent event) {
-        // Not used for this project.
+        // Not used for this project. Although, is needed for compliation.
     }
 
-    @Override
     public void keyPressed(KeyEvent event) {
         int keyCode = event.getKeyCode();
 
         if (keyCode == KeyEvent.VK_W) {
             upPressed = true;
-            leftPressed = rightPressed = downPressed = false;
+            System.out.println("W_D");
+            // leftPressed = rightPressed = downPressed = false;
         }
 
         if (keyCode == KeyEvent.VK_A) {
             leftPressed = true;
-            upPressed = rightPressed = downPressed = false;
+            System.out.println("A_D");
+            // upPressed = rightPressed = downPressed = false;
         }
 
         if (keyCode == KeyEvent.VK_D) {
             rightPressed = true;
-            leftPressed = upPressed = downPressed = false;
+            System.out.println("D_D");
+            // leftPressed = upPressed = downPressed = false;
         }
 
         if (keyCode == KeyEvent.VK_S) {
             downPressed = true;
-            leftPressed = rightPressed = upPressed = false;
+            System.out.println("S_D");
+            // leftPressed = rightPressed = upPressed = false;
         }
     }
 
-    @Override
     public void keyReleased(KeyEvent event) {
         int keyCode = event.getKeyCode();
 
         if (keyCode == KeyEvent.VK_W) {
+            System.out.println("W_U");
             upPressed = false;
         }
 
         if (keyCode == KeyEvent.VK_A) {
+            System.out.println("A_U");
             leftPressed = false;
         }
 
         if (keyCode == KeyEvent.VK_D) {
+            System.out.println("D_U");
             rightPressed = false;
         }
 
         if (keyCode == KeyEvent.VK_S) {
+            System.out.println("S_U");
             downPressed = false;
         }
     }
-
-
 }
