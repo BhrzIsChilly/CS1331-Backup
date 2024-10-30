@@ -4,9 +4,6 @@
 * Ghost.java
 */
 
-package yum; // %debug
-
-
 public class Ghost extends TrickOrTreater{
     // Variables
     private int robberiesConducted;
@@ -27,6 +24,7 @@ public class Ghost extends TrickOrTreater{
     public Ghost(String name, int age, int numCandy) {
         super(name, age, numCandy);
         this.robberiesConducted = DEF_ROBBERIES_CONDUCTED;
+        this.robbable = false;
     }
 
 
@@ -37,7 +35,10 @@ public class Ghost extends TrickOrTreater{
     }
     
     private void rob(TrickOrTreater toBeRobbed) {
-        // Undefined yet
+        if (toBeRobbed.robbable) {
+            int candiesRobbed = toBeRobbed.beRobbed();
+            this.robberiesConducted++;
+        }
     }
 
     public String toString() {

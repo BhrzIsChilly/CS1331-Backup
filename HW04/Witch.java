@@ -4,9 +4,6 @@
 * Witch.java
 */
 
-package yum; // %debug
-
-
 public class Witch extends TrickOrTreater implements Robbable {
     // Variables
     private String signatureCackle;
@@ -32,6 +29,7 @@ public class Witch extends TrickOrTreater implements Robbable {
         } else {
             this.signatureCackle = signatureCackle;
         }
+        this.robbable = true;
     }
 
 
@@ -41,7 +39,7 @@ public class Witch extends TrickOrTreater implements Robbable {
         this.numCandy += 3;
     }
 
-    public int compareTo(Object other) { ///////////////////////////////////////////////////
+    public int compareTo(Object other) {
         if (other == null || !other.getClass().equals(this.getClass())) {
             return -2; // for personal debugging
         }
@@ -84,8 +82,13 @@ public class Witch extends TrickOrTreater implements Robbable {
     }
 
     public int beRobbed() {
-        // be robbed
-        return 1;
+        int initialCandy = this.numCandy;
+        this.numCandy -= 6;
+        if (this.numCandy < 0) {
+            this.numCandy = 0;
+            return initialCandy;
+        }
+        return 6;
     }
 
 

@@ -4,8 +4,6 @@
 * Robbable.java
 */
 
-package yum; // %debug
-
 
 public interface Robbable {
     public int beRobbed();

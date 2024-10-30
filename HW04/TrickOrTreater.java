@@ -7,13 +7,13 @@
 // when a class is made final, you are unable to create a child class.
 // when a method is made final, you are unable to override the method.
 
-package yum; // %debug
 
 public abstract class TrickOrTreater {
     // Variables
     protected String name;
     protected int age;
-    protected int numCandy; 
+    protected int numCandy;
+    protected boolean robbable;
 
 
     // Default variables
