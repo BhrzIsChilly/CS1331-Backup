@@ -1,0 +1,22 @@
+Initial games added to TestTickets.csv.
+Additional BasketballGame added to TestTickets.csv.
+Games in TestTickets.csv after additions:
+BasketballGame,Arena A,18:00,2024-11-10,102,98,50,NBA
+BasketballGame,Arena B,20:00,2024-11-11,110,105,30,NBA
+FootballGame,Stadium X,14:00,2024-11-12,21,17,25,TeamX vs TeamY
+BasketballGame,Arena C,19:00,2024-11-14,95,100,20,NBA
+BasketballGame1 attended and removed from TestTickets.csv.
+Games in TestTickets.csv after attending BasketballGame1:
+BasketballGame,Arena B,20:00,2024-11-11,110,105,30,NBA
+FootballGame,Stadium X,14:00,2024-11-12,21,17,25,TeamX vs TeamY
+BasketballGame,Arena C,19:00,2024-11-14,95,100,20,NBA
+Caught FileNotFoundException as expected for a non-existent file.
+Games in TestTickets.csv after attempting to add a FootballGame with no seats left:
+BasketballGame,Arena B,20:00,2024-11-11,110,105,30,NBA
+FootballGame,Stadium X,14:00,2024-11-12,21,17,25,TeamX vs TeamY
+BasketballGame,Arena C,19:00,2024-11-14,95,100,20,NBA
+Found matching game indexes for basketballGame2:
+Index: 0
+Found matching game indexes for footballGame1:
+Index: 1
+Caught InvalidTicketException as expected for a game not in file.

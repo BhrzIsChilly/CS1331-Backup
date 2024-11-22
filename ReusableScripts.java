@@ -35,4 +35,38 @@ public class ReusableScripts {
         return -1;
     }
 
+    public static void intArrayPrinter(int[] array) {
+        for (int i : array) {
+            System.out.printf("%d, ", i);
+        }
+    }
+
+
+
+    // Works with non-primitives -- The base generic, T needs to be an instanceof Object, even if T[] is an Object itself.
+    public static <T> void arrayPrinter(T[] array) {
+        for (T i : array) {
+            System.out.printf("%s, ", i.toString());
+        }
+    }
+
+    private static boolean checkEmptyArray(SushiRoll[][] sushiOrders) {
+        int sushiOrdersLength = sushiOrders.length;
+        int sushiOrdersCounter = 0;
+
+        if (sushiOrdersLength == 0) {
+            return new SushiRoll[0];
+        }
+
+        for (SushiRoll[] order : sushiOrders) {
+            if (order.length != 0) {
+                sushiOrdersCounter++;
+            }
+        }
+
+        if (sushiOrdersCounter == 0) {
+            return new SushiRoll[0];
+        }
+    }
+
 }
