@@ -1,0 +1,36 @@
+For extra credit, I have added a keyboard to the bottom of the game screen, and
+added the function to have the letters that are guessed to change the keyboard key's
+colors. I didn't just make the keyboard change the same color as the guessed letters,
+but created a coloring priority for the keyboard in the order: unguessed, gray, yellow,
+then green. Green keys don't get changed if they are then guessed yellow with the next
+guess. Yellow only changes if it becomes green, etc.
+
+I also added specific unicode for the enter and backspace keys.
+
+Lastly, I added two .txt files, one kept the name words.txt and the other is named officially_allowed_guesses.txt
+words.txt contains the possible words that can be guessed, and the second one contains all the "official words" 
+from Wordle that can be used to guess the wordle. So both this words.txt and the officially_allowed_guesses.txt are
+required to run Jordle.java.
+
+Here is a list of all my required files to run the game:
+
+Self-procured:
+    Jordle.java
+    jordleImage.png
+    KeyboardMap.java
+    KeyboardPane.java
+    officially_allowed_guesses.txt
+    words.txt
+
+Provided:
+    Backend.java
+    InvalidGuessException.java
+    javafx-sdk-11.0.2/
+
+Extraneous:
+    extra_credit.txt (this)
+
+Thank you for TA'ing this semester.
+
+Respectfully,
+Braiden Anderson

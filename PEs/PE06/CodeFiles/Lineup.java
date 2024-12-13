@@ -39,28 +39,54 @@ public class Lineup<T extends Comparable<? extends Lineup>> {
     }
 
     public boolean add(T element) {
-        if (this.lineup.size() < LINEUP_SIZE) {
-            if (isAscending) {
-                for (int i = 0; i < LINEUP_SIZE; i++)
-                    return true;
-                for (T e : this.lineup) {
-                    if (e.compareTo(element) < 0) {
-                        this.lineup.set(1,e);
+        if (this.lineup.size() == LINEUP_SIZE || element == null) {
+            return false;
+        }
+
+        switch(this.isAscending) {
+            case true:
+                for (int i = 0; i < LINEUP_SIZE; i++) {
+                    if (this.lineup.get(i) != null) {
+                        this.lineup.set(i, element);
                     }
                 }
-            } else {
 
-            }
+                break;
+            case false:
+
+                break;
         }
+
+
+        // if (this.lineup.size() < LINEUP_SIZE) {
+        //     if (isAscending) {
+        //         for (int i = 0; i < LINEUP_SIZE; i++)
+        //             return true;
+        //         for (T e : this.lineup) {
+        //             if (e.compareTo(element) < 0) {
+        //                 this.lineup.set(1,e);
+        //             }
+        //         }
+        //     } else {
+
+        //     }
+        // }
     }
 
 
     // Helper functions
     private void maintainOrder() {
-        if (this.isAscending) {
-            
+        switch(this.isAscending) {
+            case true:
+                for (int i = 0; i < LINEUP_SIZE - 1; i++) {
+                    if (this.lineup.get(i) > this.lineup.get(i + 1)) {
+                        
+                    }
+                }
+                break;
+            case false:
+                break;
         }
-        
     }
 
     private boolean checkCorrectlyOrdered() {
